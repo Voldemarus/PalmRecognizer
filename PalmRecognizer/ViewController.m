@@ -10,9 +10,6 @@
 #import "ImageList.h"
 #import "ImageTableViewCell.h"
 
-#import "BlobClassifier.h"
-#import "BlobDetector.h"
-
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 {
 	NSArray <UIImage *> *imList;

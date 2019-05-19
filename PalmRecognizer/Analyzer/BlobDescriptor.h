@@ -18,7 +18,7 @@ public:
 				   const cv::Mat &keypointDescriptors, uint32_t label);
 	const cv::Mat &getNormalizedHistogram() const;
 	
-	const cv::Mt &getKeypointDescriptors() const;
+	const cv::Mat &getKeypointDescriptors() const;
 	
 	uint32_t getLabel() const;
 	
@@ -27,6 +27,6 @@ private:
 	cv::Mat keypointDescriptors;
 	uint32_t label;
 	
-}
+};
 
 #endif /* BlobDescriptor_h */

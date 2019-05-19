@@ -11,12 +11,12 @@
 
 #import "Blob.h"
 #import "BlobDescriptor.h"
-#include <opencv2/Features.hpp>
+#include "opencv2/features2d.hpp"
 
 class BlobClassifier
 {
 public:
-	blobClassifier();
+	BlobClassifier();
 	
 	/**
 	 	Add reference blob to the Classifier model
@@ -31,7 +31,7 @@ public:
 	/**
 	 	Classify blob
 	 */
-	void classufy(Blob &detected Blob) const;
+	void classify(Blob &detectedBlob) const;
 	
 private:
 	
@@ -47,7 +47,7 @@ private:
 	/**
 	 	Feature detector and descriptor extractor
 	 */
-	cv::Ptr<cv::Feature2d> featureDetectorAndDescriptorExtractor;
+	cv::Ptr <cv::Feature2D> featureDetectorAndDescriptorExtractor;
 	
 	/**
 	 Descriptor comparator
@@ -56,8 +56,8 @@ private:
 	
 	/** Array with Reference descriptors */
 	
-	std::Vaector<BlobDescriptor> referenceBlobDescriptors;
-}
+	std::vector <BlobDescriptor> referenceBlobDescriptors;
+};
 
 
 #endif /* BlobClasifier_h */

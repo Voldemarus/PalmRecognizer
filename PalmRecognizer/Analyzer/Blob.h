@@ -14,7 +14,7 @@
 class Blob
 {
 public:
-	Blob(const cv::Mat &mat, uni32_t label = 0ul);
+	Blob(const cv::Mat &mat, uint32_t label = 0ul);
 	
 	/**
 	 Create empty blob
@@ -24,7 +24,7 @@ public:
 	/**
 	 Construct Blob as copy of another Blob
 	 */
-	Blob(const& Blob &other);
+	Blob(const Blob &other);
 	
 	bool isEmpty() const;
 	
@@ -43,6 +43,6 @@ private:
 	uint32_t label;
 	cv::Mat mat;
 	
-}
+};
 
 #endif /* Blob_h */

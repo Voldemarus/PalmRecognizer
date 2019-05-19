@@ -33,6 +33,7 @@
 		1BD4F521229177BB000C49BD /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD4F520229177BB000C49BD /* opencv2.framework */; };
 		1BD4F5252291785E000C49BD /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4F5232291785E000C49BD /* ImageTableViewCell.m */; };
 		1BD4F5262291785E000C49BD /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD4F5242291785E000C49BD /* ImageTableViewCell.xib */; };
+		1BD90F1622919ABA0019A0A3 /* BlobProcesor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD90F1522919ABA0019A0A3 /* BlobProcesor.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,8 @@
 		1BD90F11229190AD0019A0A3 /* BlobDescriptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlobDescriptor.h; sourceTree = "<group>"; };
 		1BD90F12229191D90019A0A3 /* BlobClassifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlobClassifier.h; sourceTree = "<group>"; };
 		1BD90F13229195780019A0A3 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1BD90F1422919ABA0019A0A3 /* BlobProcesor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlobProcesor.h; sourceTree = "<group>"; };
+		1BD90F1522919ABA0019A0A3 /* BlobProcesor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BlobProcesor.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,8 @@
 				1BD90F12229191D90019A0A3 /* BlobClassifier.h */,
 				1BD4F52922918EE7000C49BD /* BlobDetector.h */,
 				1BD90F11229190AD0019A0A3 /* BlobDescriptor.h */,
+				1BD90F1422919ABA0019A0A3 /* BlobProcesor.h */,
+				1BD90F1522919ABA0019A0A3 /* BlobProcesor.mm */,
 			);
 			path = Analyzer;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				1BD4F5252291785E000C49BD /* ImageTableViewCell.m in Sources */,
 				1BD4F4F422916FEA000C49BD /* main.m in Sources */,
 				1BD4F4E622916FE8000C49BD /* AppDelegate.m in Sources */,
+				1BD90F1622919ABA0019A0A3 /* BlobProcesor.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

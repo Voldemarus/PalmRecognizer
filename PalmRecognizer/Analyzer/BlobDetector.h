@@ -23,11 +23,11 @@ private:
 	
 	cv::Mat resizedImage;
 	cv::Mat mask;
-	CV::Mat edges;
+	cv::Mat edges;
 	std::vector <cv::Point> contours;
-	std::vector<cv::Vec4i> hierarchy;
+	std::vector <cv::Vec4i> hierarchy;
 	
 	
-}
+};
 
 #endif /* BlobDetector_h */
