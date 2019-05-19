@@ -24,8 +24,8 @@ private:
 	cv::Mat resizedImage;
 	cv::Mat mask;
 	cv::Mat edges;
-	std::vector <cv::Point> contours;
-	std::vector <cv::Vec4i> hierarchy;
+	std::vector<std::vector<cv::Point>> contours;
+	std::vector<cv::Vec4i> hierarchy;
 	
 	
 };

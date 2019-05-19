@@ -10,6 +10,9 @@
 #import "ImageList.h"
 #import "ImageTableViewCell.h"
 
+
+#import "BlobProcessor.h"
+
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 {
 	NSArray <UIImage *> *imList;
@@ -75,7 +78,10 @@
 
 - (void) recalculateDataModel
 {
+	BlobProcessor *procesor = [BlobProcessor sharedInstance];
 	
+	// configure processor to use selectd image as reference
+	[procesor configureForIndex:selectedIndex];
 }
 
 

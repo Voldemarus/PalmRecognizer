@@ -33,7 +33,11 @@
 		1BD4F521229177BB000C49BD /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD4F520229177BB000C49BD /* opencv2.framework */; };
 		1BD4F5252291785E000C49BD /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4F5232291785E000C49BD /* ImageTableViewCell.m */; };
 		1BD4F5262291785E000C49BD /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD4F5242291785E000C49BD /* ImageTableViewCell.xib */; };
-		1BD90F1622919ABA0019A0A3 /* BlobProcesor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD90F1522919ABA0019A0A3 /* BlobProcesor.mm */; };
+		1BD90F1622919ABA0019A0A3 /* BlobProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD90F1522919ABA0019A0A3 /* BlobProcessor.mm */; };
+		1BD90F182291BF3C0019A0A3 /* BlobDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD90F172291BF3C0019A0A3 /* BlobDetector.cpp */; };
+		1BD90F1B2291C4CF0019A0A3 /* Blob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD90F192291C4CE0019A0A3 /* Blob.cpp */; };
+		1BD90F1D2291C5090019A0A3 /* BlobClassifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD90F1C2291C5090019A0A3 /* BlobClassifier.cpp */; };
+		1BD90F1F2291C55F0019A0A3 /* BlobDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD90F1E2291C55F0019A0A3 /* BlobDescriptor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,8 +78,12 @@
 		1BD90F11229190AD0019A0A3 /* BlobDescriptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlobDescriptor.h; sourceTree = "<group>"; };
 		1BD90F12229191D90019A0A3 /* BlobClassifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlobClassifier.h; sourceTree = "<group>"; };
 		1BD90F13229195780019A0A3 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		1BD90F1422919ABA0019A0A3 /* BlobProcesor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlobProcesor.h; sourceTree = "<group>"; };
-		1BD90F1522919ABA0019A0A3 /* BlobProcesor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BlobProcesor.mm; sourceTree = "<group>"; };
+		1BD90F1422919ABA0019A0A3 /* BlobProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlobProcessor.h; sourceTree = "<group>"; };
+		1BD90F1522919ABA0019A0A3 /* BlobProcessor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BlobProcessor.mm; sourceTree = "<group>"; };
+		1BD90F172291BF3C0019A0A3 /* BlobDetector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BlobDetector.cpp; sourceTree = "<group>"; };
+		1BD90F192291C4CE0019A0A3 /* Blob.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Blob.cpp; sourceTree = "<group>"; };
+		1BD90F1C2291C5090019A0A3 /* BlobClassifier.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BlobClassifier.cpp; sourceTree = "<group>"; };
+		1BD90F1E2291C55F0019A0A3 /* BlobDescriptor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BlobDescriptor.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,11 +182,15 @@
 			isa = PBXGroup;
 			children = (
 				1BD4F52822918CBD000C49BD /* Blob.h */,
+				1BD90F192291C4CE0019A0A3 /* Blob.cpp */,
 				1BD90F12229191D90019A0A3 /* BlobClassifier.h */,
+				1BD90F1C2291C5090019A0A3 /* BlobClassifier.cpp */,
 				1BD4F52922918EE7000C49BD /* BlobDetector.h */,
+				1BD90F172291BF3C0019A0A3 /* BlobDetector.cpp */,
 				1BD90F11229190AD0019A0A3 /* BlobDescriptor.h */,
-				1BD90F1422919ABA0019A0A3 /* BlobProcesor.h */,
-				1BD90F1522919ABA0019A0A3 /* BlobProcesor.mm */,
+				1BD90F1E2291C55F0019A0A3 /* BlobDescriptor.cpp */,
+				1BD90F1422919ABA0019A0A3 /* BlobProcessor.h */,
+				1BD90F1522919ABA0019A0A3 /* BlobProcessor.mm */,
 			);
 			path = Analyzer;
 			sourceTree = "<group>";
@@ -270,12 +282,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD90F1B2291C4CF0019A0A3 /* Blob.cpp in Sources */,
+				1BD90F1F2291C55F0019A0A3 /* BlobDescriptor.cpp in Sources */,
+				1BD90F182291BF3C0019A0A3 /* BlobDetector.cpp in Sources */,
 				1BD4F4E922916FE8000C49BD /* ViewController.m in Sources */,
 				1BD4F51E2291750A000C49BD /* ImageList.m in Sources */,
 				1BD4F5252291785E000C49BD /* ImageTableViewCell.m in Sources */,
 				1BD4F4F422916FEA000C49BD /* main.m in Sources */,
 				1BD4F4E622916FE8000C49BD /* AppDelegate.m in Sources */,
-				1BD90F1622919ABA0019A0A3 /* BlobProcesor.mm in Sources */,
+				1BD90F1D2291C5090019A0A3 /* BlobClassifier.cpp in Sources */,
+				1BD90F1622919ABA0019A0A3 /* BlobProcessor.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

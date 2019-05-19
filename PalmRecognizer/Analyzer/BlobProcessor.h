@@ -1,5 +1,5 @@
 //
-//  BlobProcesor.h
+//  BlobProcessor.h
 //  PalmRecognizer
 //
 //  Created by Водолазкий В.В. on 19/05/2019.
@@ -10,7 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BlobProcesor : NSObject
+@interface BlobProcessor : NSObject
+
++ (BlobProcessor *) sharedInstance;
+
+/**
+ 	Configure processor to use image with index i in ImageList
+ 	as reference.
+ */
+- (void) configureForIndex:(NSInteger) aIndex;
 
 @end
 
