@@ -1,0 +1,7 @@
+
+
+Use OpenCV download page to download and install OpenCV 3.4:
+
+https://sourceforge.net/projects/opencvlibrary/files/3.4.6/opencv-3.4.6-ios-framework.zip/download
+
+
