@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ImageList : NSObject
 @property (nonatomic, readonly) NSArray <UIImage *> *images;
+@property (nonatomic, readonly) NSArray <NSString *> *identifiers;
 
 + (ImageList *) sharedInstance;
 

@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  	Calculates distance between two images, given by their
  	indexes in the item list
  */
-- (double) distanceBetweenItem:(NSInteger) itemA andItme:(NSInteger) itemB;
+- (double) distanceBetweenItem:(NSInteger) itemA andItem:(NSInteger) itemB;
 
 @end
 

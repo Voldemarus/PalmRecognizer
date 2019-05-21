@@ -16,8 +16,10 @@
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 {
 	NSArray <UIImage *> *imList;
+	NSArray <NSString *> *identifiers;
 	NSInteger selectedIndex;
-	double *correlation;
+	NSMutableArray <NSNumber *> *distanceArray;
+	
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tv;
@@ -30,13 +32,9 @@
 	[super viewDidLoad];
 	
 	imList =[ImageList sharedInstance].images;
+	identifiers = [ImageList sharedInstance].identifiers;
+	distanceArray = [NSMutableArray new];
 	selectedIndex = -1;
-	
-	// init and fill correlation array
-	correlation = malloc(imList.count * sizeof(double));
-	for (NSInteger i = 0; i < imList.count; i++) {
-		correlation[i] = 0.0;
-	}
 	
 	[self.tv registerNib:[ImageTableViewCell cellNib] forCellReuseIdentifier:[ImageTableViewCell ImageTableViewCellReuseID]];
 }
@@ -53,6 +51,11 @@
 {
 	ImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[ImageTableViewCell ImageTableViewCellReuseID]];
 	cell.image = imList[indexPath.row];
+	if (selectedIndex >= 0) {
+		cell.parameter = distanceArray[indexPath.row].doubleValue;
+	} else {
+		cell.parameter = 10000.0;
+	}
 	BOOL isSelected = (indexPath.row == selectedIndex);
 	cell.accessoryType = (isSelected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
 	
@@ -80,8 +83,15 @@
 {
 	BlobProcessor *procesor = [BlobProcessor sharedInstance];
 	
-	// configure processor to use selectd image as reference
-	[procesor configureForIndex:selectedIndex];
+	// configure processor to use selected image as reference
+	//	[procesor configureForIndex:selectedIndex];
+	
+	[distanceArray removeAllObjects];
+	for (NSInteger i = 0; i < imList.count; i++) {
+		double result = [procesor distanceBetweenItem:selectedIndex andItem:i];
+		NSLog(@" %ld -> %ld ==> %.3f",selectedIndex, i, result);
+		[distanceArray addObject:@(result)];
+	}
 }
 
 

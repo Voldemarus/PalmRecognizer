@@ -10,6 +10,7 @@
 
 @interface ImageList() {
 	NSMutableArray *images;
+	NSMutableArray *identifiers;
 }
 
 @end
@@ -27,11 +28,11 @@
 	return __imList;
 }
 
-- (instancetype) init
+- (NSArray <NSString *> *) idents
 {
-	if (self = [super init]) {
-		images = [NSMutableArray new];
-		NSArray *imageNames = @[
+	static NSArray <NSString *> *__idents = nil;
+	if (!__idents) {
+		__idents =  @[
 			@"5_1558129955.jpg",
 			@"5_1558194232.jpg",
 			@"5_1558130295.jpg",
@@ -47,11 +48,27 @@
 			@"5_1558193803.jpg",
 			@"5_1558194163.jpg",
 			@"5_1558193584.jpg",
-		   ];
+		];
+	}
+	return __idents;
+}
+
+- (NSArray <NSString *> *) identifiers
+{
+	return identifiers;
+}
+
+- (instancetype) init
+{
+	if (self = [super init]) {
+		images = [NSMutableArray new];
+		identifiers = [NSMutableArray new];
+		NSArray *imageNames = [self idents];
 		for (NSString *s in imageNames) {
 			UIImage *image = [UIImage imageNamed:s];
 			if (s) {
 				[images addObject:image];
+				[identifiers addObject:s];
 			}
 		}
 		

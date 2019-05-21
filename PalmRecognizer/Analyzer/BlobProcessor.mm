@@ -57,7 +57,7 @@
 	
 }
 
-- (double) distanceBetweenItem:(NSInteger) itemA andItme:(NSInteger) itemB
+- (double) distanceBetweenItem:(NSInteger) itemA andItem:(NSInteger) itemB
 {
 	NSArray <UIImage *> *imList = [ImageList sharedInstance].images;
 	UIImage *imageA = imList[itemA];

@@ -31,7 +31,7 @@
 
 - (void) setParameter:(double)parameter
 {
-	self.correlation.text = [NSString stringWithFormat:@"%f.3",parameter];
+	self.correlation.text = [NSString stringWithFormat:@"%f.1",parameter];
 }
 
 - (void) setIdentifier:(NSString *)identifier
