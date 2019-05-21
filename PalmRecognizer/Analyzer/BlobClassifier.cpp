@@ -55,6 +55,19 @@ void BlobClassifier::classify(Blob &detectedBlob) const {
 	detectedBlob.setLabel(bestLabel);
 }
 
+/**
+ 	Research mode method, used to evaluate distance between
+ 	two Blobs
+  */
+
+float BlobClassifier::distanceBetweenBlobs(const Blob &blobA, const Blob &blobB)
+{
+	BlobDescriptor bldA = createBlobDescriptor(blobA);
+	BlobDescriptor bldB = createBlobDescriptor(blobB);
+	
+	return findDistance(bldA, bldB);
+}
+
 BlobDescriptor BlobClassifier::createBlobDescriptor(const Blob &blob) const {
 	
 	const cv::Mat &mat = blob.getMat();

@@ -33,6 +33,12 @@ public:
 	 */
 	void classify(Blob &detectedBlob) const;
 	
+	/**
+	 	Get distance between two Blobs
+	 */
+	float distanceBetweenBlobs(const Blob &blobA, const Blob &blobB);
+	
+	
 private:
 	
 	BlobDescriptor createBlobDescriptor(const Blob &blob) const;
