@@ -8,6 +8,10 @@
 
 #import "ImageList.h"
 
+#import "ImageDataList.h"
+#import "ImageList+ImageDataList.h"
+
+
 @interface ImageList() {
 	NSMutableArray *images;
 	NSMutableArray *identifiers;
