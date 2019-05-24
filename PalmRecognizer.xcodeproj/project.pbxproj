@@ -357,7 +357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/DataModel/GeneralImageSet.pl ${PROJECT_DIR}\n\n";
+			shellScript = "${PROJECT_DIR}/PalmRecognizer/DataModel/GenerateImageSet.pl ${PROJECT_DIR}\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
