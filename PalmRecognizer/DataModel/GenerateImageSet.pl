@@ -41,7 +41,7 @@ if (defined($projectDir)) {
 		#	print "Templat directory - $templateDir \n";
 		opendir (TEMPLATEDIR, $templateDir) || die "Cannot open template directory - $!";
 		my @templates = grep {/^.+\.jpg$/} readdir TEMPLATEDIR;
-		print "templates ".Dumper(\@templates);
+		#		print "templates ".Dumper(\@templates);
 		#
 		# fill array with template' filenames
 		#
@@ -76,15 +76,17 @@ if (defined($projectDir)) {
 				print OUTFILE "\t\t\t\@[\@\"$templates[$i]\",\@\"\"],\n";
 			}
 			for ($i = 0; $i < $size; $i++) {
-				my ($templateDir) = $templates[$i] =~ /(.+)\.jpg/;
+				my ($templateClass) = $templates[$i] =~ /(.+)\.jpg/;
 				if ($templateDir ne "") {
+					$templateDir = $imageDir."/".$templateClass;
 					opendir (TESTDIR, $templateDir) || next;
 					my @files = grep {/^.+\.jpg$/} readdir TESTDIR;
 					my $sFiles = @files;
+#					print Dumper(\@files);
 					if ($sFiles > 0) {
-						print OITFILE "\t\t\Test files for set $templateDir\n";
+						print OUTFILE "\t\t\// Test files for set $templateClass\n";
 						for ($k = 0; $k < $sFiles; $k++) {
-							print OUTFILE "\t\t\t\@[\@\"$files[$k]\",\@\"$templateDir\"],\n";
+							print OUTFILE "\t\t\t\@[\@\"$files[$k]\",\@\"$templateClass\"],\n";
 						}
 					}
 					closedir TESTDIR;
@@ -93,20 +95,15 @@ if (defined($projectDir)) {
 			}
 
 			#Here image set is placed
-			
-			print OUTFILE "\n\n";
 			print OUTFILE "	];\n";
 			print OUTFILE "	return imSet;\n";
-			print OUTFILE "}\n\n\n";
+			print OUTFILE "}\n\n";
 			print OUTFILE "\@end\n";
 
 			close OUTFILE;
 			
 		}
 	}
-	
-	print "files - ".Dumper(\@files2);
-	
 } else {
 	print "PROJECT_DIR should be used as command line argument\n";
 	exit 1;
