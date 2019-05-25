@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "ImageList.h"
 
 /**
  ImageSet entry is NSArray with rows:
@@ -17,10 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
  
  */
 
-@interface NSString (ImageDataList)
+@interface ImageList (ImageDataList)
 
 - (NSArray *) imageSet;
 
 @end
-
-NS_ASSUME_NONNULL_END

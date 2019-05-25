@@ -52,6 +52,8 @@
 		1BFCC8492295768500682C8D /* 5_1558194232.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BFCC8482295768500682C8D /* 5_1558194232.jpg */; };
 		1BFCC84C229576AB00682C8D /* 5_1558194308.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BFCC84B229576AB00682C8D /* 5_1558194308.jpg */; };
 		1BFCC84F2295786F00682C8D /* ImageList+ImageDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFCC84E2295786F00682C8D /* ImageList+ImageDataList.m */; };
+		1BFCC86422984A4E00682C8D /* ImageObjectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFCC86222984A4E00682C8D /* ImageObjectCollectionViewCell.m */; };
+		1BFCC86522984A4E00682C8D /* ImageObjectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BFCC86322984A4E00682C8D /* ImageObjectCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,9 @@
 		1BFCC84D2295786F00682C8D /* ImageList+ImageDataList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageList+ImageDataList.h"; sourceTree = "<group>"; };
 		1BFCC84E2295786F00682C8D /* ImageList+ImageDataList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ImageList+ImageDataList.m"; sourceTree = "<group>"; };
 		1BFCC850229579D800682C8D /* GenerateImageSet.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = GenerateImageSet.pl; sourceTree = "<group>"; };
+		1BFCC86122984A4E00682C8D /* ImageObjectCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageObjectCollectionViewCell.h; sourceTree = "<group>"; };
+		1BFCC86222984A4E00682C8D /* ImageObjectCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageObjectCollectionViewCell.m; sourceTree = "<group>"; };
+		1BFCC86322984A4E00682C8D /* ImageObjectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageObjectCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +150,7 @@
 		1BD4F4E322916FE8000C49BD /* PalmRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				1BFCC86022984A1A00682C8D /* CollectionCells */,
 				1BD4F52722918CA0000C49BD /* Analyzer */,
 				1BD4F51B229174D5000C49BD /* DataModel */,
 				1BD4F4FC22917481000C49BD /* ImageSet */,
@@ -255,6 +261,16 @@
 			path = 5_1558194232;
 			sourceTree = "<group>";
 		};
+		1BFCC86022984A1A00682C8D /* CollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				1BFCC86122984A4E00682C8D /* ImageObjectCollectionViewCell.h */,
+				1BFCC86222984A4E00682C8D /* ImageObjectCollectionViewCell.m */,
+				1BFCC86322984A4E00682C8D /* ImageObjectCollectionViewCell.xib */,
+			);
+			path = CollectionCells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,6 +346,7 @@
 				1BD4F4EE22916FEA000C49BD /* Assets.xcassets in Resources */,
 				1BFCC8442295765B00682C8D /* 5_1558194105.jpg in Resources */,
 				1BFCC82F229575E600682C8D /* 5_1558129955.jpg in Resources */,
+				1BFCC86522984A4E00682C8D /* ImageObjectCollectionViewCell.xib in Resources */,
 				1BD4F4EC22916FE8000C49BD /* Main.storyboard in Resources */,
 				1BFCC8362295760800682C8D /* 5_1558130014.jpg in Resources */,
 				1BFCC8472295765B00682C8D /* 5_1558193865.jpg in Resources */,
@@ -373,6 +390,7 @@
 				1BD4F4E922916FE8000C49BD /* ViewController.m in Sources */,
 				1BD4F51E2291750A000C49BD /* ImageList.m in Sources */,
 				1BD4F5252291785E000C49BD /* ImageTableViewCell.m in Sources */,
+				1BFCC86422984A4E00682C8D /* ImageObjectCollectionViewCell.m in Sources */,
 				1BD4F4F422916FEA000C49BD /* main.m in Sources */,
 				1BD4F4E622916FE8000C49BD /* AppDelegate.m in Sources */,
 				1BD90F1D2291C5090019A0A3 /* BlobClassifier.cpp in Sources */,

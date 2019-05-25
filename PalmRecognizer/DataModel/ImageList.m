@@ -13,7 +13,9 @@
 
 @interface ImageList() {
 	NSMutableArray *images;
+	NSMutableArray *templateImages;
 	NSMutableArray *identifiers;
+	NSMutableDictionary *classToId;
 }
 
 @end
@@ -21,6 +23,7 @@
 @implementation ImageList
 
 @synthesize images = images;
+@synthesize templates = templateImages;
 
 + (ImageList *) sharedInstance
 {
@@ -31,30 +34,7 @@
 	return __imList;
 }
 
-- (NSArray <NSString *> *) idents
-{
-	static NSArray <NSString *> *__idents = nil;
-	if (!__idents) {
-		__idents =  @[
-			@"5_1558129955.jpg",
-			@"5_1558194232.jpg",
-			@"5_1558130295.jpg",
-			@"5_1558130079.jpg",
-			@"5_1558194308.jpg",
-			@"5_1558193865.jpg",
-			@"5_1558194105.jpg",
-			@"5_1558193642.jpg",
-			@"5_1558130299.jpg",
-			@"5_1558193733.jpg",
-			@"5_1558130014.jpg",
-			@"5_1558194039.jpg",
-			@"5_1558193803.jpg",
-			@"5_1558194163.jpg",
-			@"5_1558193584.jpg",
-		];
-	}
-	return __idents;
-}
+
 
 - (NSArray <NSString *> *) identifiers
 {
@@ -65,20 +45,66 @@
 {
 	if (self = [super init]) {
 		images = [NSMutableArray new];
+		templateImages = [NSMutableArray new];
+		classToId = [NSMutableDictionary new];
 		identifiers = [NSMutableArray new];
-		NSArray *imageNames = [self idents];
-		for (NSString *s in imageNames) {
-			UIImage *image = [UIImage imageNamed:s];
-			if (s) {
-				[images addObject:image];
-				[identifiers addObject:s];
+		// create templates
+		NSArray *dataSource = [self imageSet];
+		NSInteger classIndex = 0;
+		for (NSInteger i = 0; i < dataSource.count; i++) {
+			NSArray *data = dataSource[i];
+			NSString *fileName = data[0];
+			NSString *className = data[1];
+			ImageObject *obj = [[ImageObject alloc] initWithFileName:fileName];
+			if (className.length == 0) {
+				// this is class definition - use filename as
+				// its name
+				NSString *clName = [fileName stringByDeletingLastPathComponent];
+				obj.classNumber = classIndex++;
+				classToId[clName] = @(obj.classNumber);
+				obj.expectedClassNumber = -1;
+				[templateImages addObject:obj];
+			} else {
+				// this is a record for testing
+				obj.classNumber = -1;
+				NSNumber *index = classToId[className];
+				// we'll add only images with known class for now
+				if (index) {
+					obj.expectedClassNumber = index.integerValue;
+					[images addObject:obj];
+				}
 			}
 		}
-		
+		NSLog(@"Templates: \n%@\n", templateImages);
+		NSLog(@"images:\n%@\n",images);
 	}
 	return self;
 }
 
+#pragma mark -
 
+@end
+
+@interface ImageObject () {
+	UIImage *__image;
+}
+
+@end
+
+@implementation ImageObject
+
+- (instancetype) initWithFileName:(NSString *)fileName
+{
+	if (self = [super init]) {
+		__image = [UIImage imageNamed:fileName];
+	}
+	return self;
+}
+
+- (UIImage *)image
+{
+	return __image;
+}
+		
 
 @end
