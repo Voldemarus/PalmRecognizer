@@ -59,7 +59,7 @@
 			if (className.length == 0) {
 				// this is class definition - use filename as
 				// its name
-				NSString *clName = [fileName stringByDeletingLastPathComponent];
+				NSString *clName = [fileName stringByDeletingPathExtension];
 				obj.classNumber = classIndex++;
 				classToId[clName] = @(obj.classNumber);
 				obj.expectedClassNumber = -1;

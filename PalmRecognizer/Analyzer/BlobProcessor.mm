@@ -59,9 +59,9 @@
 
 - (double) distanceBetweenItem:(NSInteger) itemA andItem:(NSInteger) itemB
 {
-	NSArray <UIImage *> *imList = [ImageList sharedInstance].images;
-	UIImage *imageA = imList[itemA];
-	UIImage *imageB = imList[itemB];
+	NSArray <ImageObject *> *imList = [ImageList sharedInstance].images;
+	UIImage *imageA = imList[itemA].image;
+	UIImage *imageB = imList[itemB].image;
 	Blob blobA = [self blobFromImage:imageA withIndex:itemA];
 	Blob blobB = [self blobFromImage:imageB withIndex:itemB];
 	

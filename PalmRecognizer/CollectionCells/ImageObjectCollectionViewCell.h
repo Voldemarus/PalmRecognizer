@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ImageList.h"
 
+extern NSString * const ImageObjectCellReusableID;
 
 @interface ImageObjectCollectionViewCell : UICollectionViewCell
 
@@ -18,6 +19,8 @@
 @property (readonly) BOOL validClass;
 
 + (CGSize) itemSize;
+
++ (UINib *) cellNib;
 
 @end
 

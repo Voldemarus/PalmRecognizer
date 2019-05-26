@@ -8,6 +8,9 @@
 
 #import "ImageObjectCollectionViewCell.h"
 
+
+NSString * const ImageObjectCellReusableID =	@"ImageObjectCellReusableID";
+
 #define CELL_SIZE_WIDTH			120.0
 
 @interface ImageObjectCollectionViewCell()
@@ -54,6 +57,8 @@
 - (void) setImageObject:(ImageObject *)imageObject
 {
 	_imageObject = imageObject;
+	self.imageView.image = _imageObject.image;
+	self.expectedClassLabel.text = [NSString stringWithFormat:@"%ld",(long) _imageObject.expectedClassNumber];
 }
 
 
@@ -82,6 +87,11 @@
 + (CGSize) itemSize
 {
 	return CGSizeMake(CELL_SIZE_WIDTH, CELL_SIZE_WIDTH);
+}
+
++ (UINib *) cellNib
+{
+	return [UINib nibWithNibName:[[self class] description] bundle:nil];
 }
 
 @end

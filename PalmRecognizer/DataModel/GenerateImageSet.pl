@@ -65,7 +65,7 @@ if (defined($projectDir)) {
 			print OUTFILE "//\n\n";
 			print OUTFILE "\#import \"ImageList+ImageDataList.h\"\n";
 			print OUTFILE "\n";
-			print OUTFILE "\@implementation NSString (ImageDataList)\n\n";
+			print OUTFILE "\@implementation ImageList  (ImageDataList)\n\n";
 
 			print OUTFILE "- (NSArray *) imageSet\n";
 			print OUTFILE "{\n";
