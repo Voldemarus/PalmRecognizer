@@ -10,6 +10,19 @@
 
 NSString * const ImageObjectTemplateViewReusableId = @"ImageObjectTemplateViewReusableId";
 
+@interface ImageObjectTemplateView () 
+@property (weak, nonatomic) IBOutlet UIImageView *templateImage;
+@property (weak, nonatomic) IBOutlet UILabel *precisionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *expectedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *templateNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *properLabel;
+@property (weak, nonatomic) IBOutlet UILabel *falseAlertLabel;
+@property (weak, nonatomic) IBOutlet UILabel *missedTargetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalErrorsLabel;
+
+@end
+
+
 @implementation ImageObjectTemplateView
 
 - (instancetype) initWithFrame:(CGRect)frame
@@ -24,6 +37,15 @@ NSString * const ImageObjectTemplateViewReusableId = @"ImageObjectTemplateViewRe
 - (void) setTemplateObject:(ImageObject *)templateObject
 {
 	_templateObject = templateObject;
+	self.templateImage.image = _templateObject.image;
+	self.templateNameLabel.text = [NSString stringWithFormat:@"Class #%ld", (long)_templateObject.classNumber];
 }
+
+
++ (UINib *) cellNib
+{
+	return [UINib nibWithNibName:[[self class] description] bundle:nil];
+}
+
 
 @end

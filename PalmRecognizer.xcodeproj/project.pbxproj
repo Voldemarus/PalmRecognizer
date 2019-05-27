@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		1B49F9AA229AC70600856021 /* ImageObjectTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B49F9A9229AC70600856021 /* ImageObjectTemplateView.m */; };
+		1BA5B49B229C2AC200C9B821 /* ImageObjectTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA5B49A229C2AC200C9B821 /* ImageObjectTemplateView.xib */; };
 		1BD4F4E622916FE8000C49BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4F4E522916FE8000C49BD /* AppDelegate.m */; };
 		1BD4F4E922916FE8000C49BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4F4E822916FE8000C49BD /* ViewController.m */; };
 		1BD4F4EC22916FE8000C49BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD4F4EA22916FE8000C49BD /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		1B49F9A8229AC70600856021 /* ImageObjectTemplateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageObjectTemplateView.h; sourceTree = "<group>"; };
 		1B49F9A9229AC70600856021 /* ImageObjectTemplateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageObjectTemplateView.m; sourceTree = "<group>"; };
+		1BA5B49A229C2AC200C9B821 /* ImageObjectTemplateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageObjectTemplateView.xib; sourceTree = "<group>"; };
 		1BD4F4E122916FE8000C49BD /* PalmRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PalmRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD4F4E422916FE8000C49BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BD4F4E522916FE8000C49BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				1BFCC86322984A4E00682C8D /* ImageObjectCollectionViewCell.xib */,
 				1B49F9A8229AC70600856021 /* ImageObjectTemplateView.h */,
 				1B49F9A9229AC70600856021 /* ImageObjectTemplateView.m */,
+				1BA5B49A229C2AC200C9B821 /* ImageObjectTemplateView.xib */,
 			);
 			path = CollectionCells;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				1BFCC83A2295760800682C8D /* 5_1558130295.jpg in Resources */,
 				1BFCC8492295768500682C8D /* 5_1558194232.jpg in Resources */,
 				1BFCC84C229576AB00682C8D /* 5_1558194308.jpg in Resources */,
+				1BA5B49B229C2AC200C9B821 /* ImageObjectTemplateView.xib in Resources */,
 				1BFCC8392295760800682C8D /* 5_1558130079.jpg in Resources */,
 				1BD4F4F122916FEA000C49BD /* LaunchScreen.storyboard in Resources */,
 				1BD4F5262291785E000C49BD /* ImageTableViewCell.xib in Resources */,

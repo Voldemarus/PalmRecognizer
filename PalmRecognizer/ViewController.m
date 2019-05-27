@@ -44,14 +44,13 @@
 	
 //	[self.tv registerNib:[ImageTableViewCell cellNib] forCellReuseIdentifier:[ImageTableViewCell ImageTableViewCellReuseID]];
 	
-	UICollectionViewLayout *layout = self.cv.collectionViewLayout;
+//	UICollectionViewLayout *layout = self.cv.collectionViewLayout;
 //	layout.itemSize = [ImageObjectCollectionViewCell itemSize];
 	
 	
 	[self.cv registerNib:[ImageObjectCollectionViewCell cellNib] forCellWithReuseIdentifier:ImageObjectCellReusableID];
-
 	
-	[self.cv registerClass:[ImageObjectTemplateView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:ImageObjectTemplateViewReusableId];
+	[self.cv registerNib:[ImageObjectTemplateView cellNib] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:ImageObjectTemplateViewReusableId];
 
 }
 
@@ -97,7 +96,7 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
 	if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-		ImageObjectTemplateView *header = (ImageObjectTemplateView *)[collectionView dequeueReusableCellWithReuseIdentifier:ImageObjectCellReusableID forIndexPath:indexPath];
+		ImageObjectTemplateView *header = (ImageObjectTemplateView *)[collectionView dequeueReusableCellWithReuseIdentifier:ImageObjectTemplateViewReusableId forIndexPath:indexPath];
 		header.templateObject = templateList[indexPath.section];
 		return header;
 	}

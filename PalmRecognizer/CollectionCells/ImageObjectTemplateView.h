@@ -16,6 +16,8 @@ extern NSString * const ImageObjectTemplateViewReusableId;
 
 @property (nonatomic, retain) ImageObject *templateObject;
 
++ (UINib *) cellNib;
+
 @end
 
 
