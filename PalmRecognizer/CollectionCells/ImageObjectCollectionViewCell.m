@@ -40,16 +40,16 @@ NSString * const ImageObjectCellReusableID =	@"ImageObjectCellReusableID";
 	layer.borderColor = [UIColor darkGrayColor].CGColor;
 	
 	self.expectedClassLabel.text = @"?";
-	self.expecredClassView.alpha = 0.0;
+//	self.expecredClassView.alpha = 0.0;
 	CALayer *lec = self.expecredClassView.layer;
 	lec.cornerRadius = self.expecredClassView.frame.size.width / 2.0;
 	
-	self.actualClassView.alpha = 0.0;
+//	self.actualClassView.alpha = 0.0;
 	self.actualClassLabel.text = @"?";
 	CALayer *lac = self.actualClassView.layer;
 	lac.cornerRadius = self.actualClassView.frame.size.width / 2.0;
 	
-	self.auxillaryView.alpha = 0.0;
+//	self.auxillaryView.alpha = 0.0;
 	self.auxillaryLabel.text = @"?";
 	
 }
@@ -57,8 +57,15 @@ NSString * const ImageObjectCellReusableID =	@"ImageObjectCellReusableID";
 - (void) setImageObject:(ImageObject *)imageObject
 {
 	_imageObject = imageObject;
-	self.imageView.image = _imageObject.image;
-	self.expectedClassLabel.text = [NSString stringWithFormat:@"%ld",(long) _imageObject.expectedClassNumber];
+	if (_imageObject) {
+		self.hidden = NO;
+		self.imageView.image = _imageObject.image;
+		self.expectedClassLabel.text = [NSString stringWithFormat:@"%ld",(long) _imageObject.expectedClassNumber];
+	} else {
+		// used to show section header in case when no actual image
+		// objects are present in current section
+//		self.hidden = YES;
+	}
 }
 
 

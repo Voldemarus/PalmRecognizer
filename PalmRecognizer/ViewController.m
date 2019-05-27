@@ -10,11 +10,11 @@
 #import "ImageList.h"
 #import "ImageTableViewCell.h"
 #import "ImageObjectCollectionViewCell.h"
-
+#import "ImageObjectTemplateView.h"
 
 #import "BlobProcessor.h"
 
-@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
 	NSArray <ImageObject *> *imList;
 	NSArray <ImageObject *> *templateList;
@@ -44,9 +44,15 @@
 	
 //	[self.tv registerNib:[ImageTableViewCell cellNib] forCellReuseIdentifier:[ImageTableViewCell ImageTableViewCellReuseID]];
 	
+	UICollectionViewLayout *layout = self.cv.collectionViewLayout;
+//	layout.itemSize = [ImageObjectCollectionViewCell itemSize];
+	
+	
 	[self.cv registerNib:[ImageObjectCollectionViewCell cellNib] forCellWithReuseIdentifier:ImageObjectCellReusableID];
 
 	
+	[self.cv registerClass:[ImageObjectTemplateView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:ImageObjectTemplateViewReusableId];
+
 }
 
 
@@ -65,7 +71,7 @@
 	if (list) {
 		return list.count;
 	}
-	return 0;
+	return 1;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -73,10 +79,30 @@
 	ImageObjectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ImageObjectCellReusableID forIndexPath:indexPath];
 	ImageObject *template = templateList[indexPath.section];
 	NSArray *list = recognizedData[template];
-	cell.imageObject = list[indexPath.row];
+	if (list) {
+		cell.imageObject = list[indexPath.row];
+	} else {
+		cell.imageObject = nil;
+	}
 	return cell;
 }
 
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+	return CGSizeMake(collectionView.frame.size.width, 130.0);
+}
+
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+	if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+		ImageObjectTemplateView *header = (ImageObjectTemplateView *)[collectionView dequeueReusableCellWithReuseIdentifier:ImageObjectCellReusableID forIndexPath:indexPath];
+		header.templateObject = templateList[indexPath.section];
+		return header;
+	}
+	return [[UICollectionReusableView alloc] initWithFrame:CGRectZero];
+}
 
 
 #pragma mark -

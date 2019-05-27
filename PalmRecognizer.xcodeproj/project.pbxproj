@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1B49F9AA229AC70600856021 /* ImageObjectTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B49F9A9229AC70600856021 /* ImageObjectTemplateView.m */; };
 		1BD4F4E622916FE8000C49BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4F4E522916FE8000C49BD /* AppDelegate.m */; };
 		1BD4F4E922916FE8000C49BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4F4E822916FE8000C49BD /* ViewController.m */; };
 		1BD4F4EC22916FE8000C49BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD4F4EA22916FE8000C49BD /* Main.storyboard */; };
@@ -67,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B49F9A8229AC70600856021 /* ImageObjectTemplateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageObjectTemplateView.h; sourceTree = "<group>"; };
+		1B49F9A9229AC70600856021 /* ImageObjectTemplateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageObjectTemplateView.m; sourceTree = "<group>"; };
 		1BD4F4E122916FE8000C49BD /* PalmRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PalmRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD4F4E422916FE8000C49BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BD4F4E522916FE8000C49BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -267,6 +270,8 @@
 				1BFCC86122984A4E00682C8D /* ImageObjectCollectionViewCell.h */,
 				1BFCC86222984A4E00682C8D /* ImageObjectCollectionViewCell.m */,
 				1BFCC86322984A4E00682C8D /* ImageObjectCollectionViewCell.xib */,
+				1B49F9A8229AC70600856021 /* ImageObjectTemplateView.h */,
+				1B49F9A9229AC70600856021 /* ImageObjectTemplateView.m */,
 			);
 			path = CollectionCells;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				1BFCC84F2295786F00682C8D /* ImageList+ImageDataList.m in Sources */,
 				1BD90F182291BF3C0019A0A3 /* BlobDetector.cpp in Sources */,
 				1BD4F4E922916FE8000C49BD /* ViewController.m in Sources */,
+				1B49F9AA229AC70600856021 /* ImageObjectTemplateView.m in Sources */,
 				1BD4F51E2291750A000C49BD /* ImageList.m in Sources */,
 				1BD4F5252291785E000C49BD /* ImageTableViewCell.m in Sources */,
 				1BFCC86422984A4E00682C8D /* ImageObjectCollectionViewCell.m in Sources */,

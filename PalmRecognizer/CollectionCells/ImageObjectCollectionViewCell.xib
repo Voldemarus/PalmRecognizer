@@ -44,7 +44,7 @@
                             <constraint firstAttribute="width" constant="30" id="ujt-zE-YW1"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IaV-2e-yzH">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaV-2e-yzH">
                         <rect key="frame" x="83" y="85" width="30" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHX-lh-Mob">
@@ -66,7 +66,7 @@
                             <constraint firstItem="CHX-lh-Mob" firstAttribute="centerY" secondItem="IaV-2e-yzH" secondAttribute="centerY" id="zUd-GY-5Sc"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e4s-pm-SMW">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4s-pm-SMW">
                         <rect key="frame" x="7" y="86" width="30" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBM-zU-1Om">
@@ -91,10 +91,14 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="IaV-2e-yzH" firstAttribute="top" secondItem="GAa-Xu-KXH" secondAttribute="bottom" constant="49" id="3RD-0L-8Qg"/>
+                <constraint firstItem="e4s-pm-SMW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="Cgb-k6-chy"/>
                 <constraint firstItem="GAa-Xu-KXH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="HMB-7q-n5n"/>
+                <constraint firstItem="e4s-pm-SMW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="86" id="Jtb-ib-8pZ"/>
                 <constraint firstAttribute="trailing" secondItem="GAa-Xu-KXH" secondAttribute="trailing" constant="7" id="L6c-xx-10d"/>
                 <constraint firstAttribute="bottom" secondItem="Tj5-tx-Ec6" secondAttribute="bottom" id="N3V-RC-tdx"/>
                 <constraint firstItem="Tj5-tx-Ec6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QQV-O8-QD9"/>
+                <constraint firstItem="IaV-2e-yzH" firstAttribute="leading" secondItem="e4s-pm-SMW" secondAttribute="trailing" constant="46" id="bMw-iY-mZq"/>
                 <constraint firstItem="Tj5-tx-Ec6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qRp-j7-prg"/>
                 <constraint firstAttribute="trailing" secondItem="Tj5-tx-Ec6" secondAttribute="trailing" id="t0b-4c-7ct"/>
             </constraints>
